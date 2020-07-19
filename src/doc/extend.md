@@ -7,7 +7,6 @@ Here is some useful advice for how you can make your project with HTML5
 Boilerplate even better. We don't want to include it all by default, as not
 everything fits with everyone's needs.
 
-
 * [App Stores](#app-stores)
 * [DNS prefetching](#dns-prefetching)
 * [Google Universal Analytics](#google-universal-analytics)
@@ -100,7 +99,6 @@ Microsoft Ajax Content Delivery Network:
 * https://dev.chromium.org/developers/design-documents/dns-prefetching
 * https://docs.microsoft.com/en-us/archive/blogs/ie/internet-explorer-9-network-performance-improvements
 
-
 ## Google Universal Analytics
 
 ### More tracking settings
@@ -119,7 +117,6 @@ Setup](https://developers.google.com/analytics/devguides/collection/analyticsjs/
 and
 [Event](https://developers.google.com/analytics/devguides/collection/analyticsjs/events)
 Docs.
-
 
 ### Track jQuery AJAX requests in Google Analytics
 
@@ -167,7 +164,7 @@ Add this function after `ga` is defined:
 
 ### Track page scroll
 
-Add this function after `ga` is defined:
+Add this function after `ga` is defined. Note, the following snippet requires jQuery.
 
 ```js
 $(function(){
@@ -287,21 +284,6 @@ schema](https://docs.microsoft.com/en-us/archive/blogs/ie/pinned-sites-in-window
 <meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=https://www.example.com/path/to/file.xml">
 ```
 
-### Disable link highlighting upon tap in IE10
-
-Similar to
-[-webkit-tap-highlight-color](https://davidwalsh.name/mobile-highlight-color) in
-iOS Safari. Unlike that CSS property, this is an HTML meta element, and its
-value is boolean rather than a color. It's all or nothing.
-
-```html
-<meta name="msapplication-tap-highlight" content="no" />
-```
-
-You can read about this useful element and more techniques in [Microsoft's
-documentation on adapting WebKit-oriented apps for
-IE10](https://blogs.windows.com/windowsdeveloper/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10/)
-
 ## Search
 
 ### Direct search spiders to your sitemap
@@ -351,11 +333,6 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
   [microdata](http://microformats.org/wiki/microdata)) for optimum search
   results
   [visibility](https://webmasters.googleblog.com/2009/05/introducing-rich-snippets.html).
-
-* If you're building a web app you may want [native style momentum scrolling in
-  iOS
-  5+](https://www.johanbrook.com/writings/native-style-momentum-scrolling-to-arrive-in-ios-5/)
-  using `-webkit-overflow-scrolling: touch`.
 
 * If you want to disable the translation prompt in Chrome or block Google
   Translate from translating your web page, use [`<meta name="google"
@@ -445,7 +422,7 @@ Facebook).
 
 Twitter provides a snippet specification that serves a similar purpose to Open
 Graph. In fact, Twitter will use Open Graph when Cards is not available. You can
-read more about the various snippet formats and application process in the
+read more about the various snippet formats in the
 [official Twitter Cards
 documentation](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards),
 and you can validate your markup with the [Card
@@ -478,13 +455,13 @@ note that this markup requires to add attributes to your top `html` tag.
 
 ```html
 <html class="no-js" lang="" itemscope itemtype="https://schema.org/Article">
-    <head>
+  <head>
 
-        <link rel="author" href="">
-        <link rel="publisher" href="">
-        <meta itemprop="name" content="">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="">
+    <link rel="author" href="">
+    <link rel="publisher" href="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="">
 ```
 
 ## URLs
@@ -539,7 +516,7 @@ added to the Home Screen on iOS:
 ```
 
 * You can use `apple-mobile-web-app-title` to add a specific sites name for the
-  Home Screen icon. This works since iOS 6.
+  Home Screen icon.
 
 ```html
 <meta name="apple-mobile-web-app-title" content="">
@@ -553,7 +530,7 @@ on Apple's site.
 ### Apple Touch Icons
 
 Apple touch icons are used as icons when a user adds your webapp to the home
-screen of aniOS devices.
+screen of an iOS devices.
 
 Though the dimensions of the icon can vary between iOS devices and versions one
 `180×180px` touch icon named `icon.png` and including the following in the
